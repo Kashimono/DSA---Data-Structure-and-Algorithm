@@ -12,20 +12,6 @@ public class Sudoku {
 			for(int col = 0; col < Size; col++) {
 				System.out.print(board[row][col] + " ");
 			}
-			System.out.println();
-		}
-		System.out.print("Press any key to continue...");
-	}
-	// Backtracking method
-	public static boolean solveSudoku(int[][] board, int row, int col) {
-		int Size = 9;
-		
-		// If we reached the end of the rows, Sudoku is complete
-		if(row == Size) {
-			return true;
-		}
-		// Move to the next row
-		if(col == Size) {
 			return solveSudoku(board, row + 1, 0);
 		}
 		// Try random numbers from 1 to 9
