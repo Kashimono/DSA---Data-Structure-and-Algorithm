@@ -2,113 +2,99 @@ import java.util.Random;
 
 public class DsaSorting {
 
-    // ==========================================
-    // MAIN METHOD
-    // ==========================================
+    // main method
     public static void main(String[] args) {
 
         // Create randomized array from 1 to 100
         int[] numbers = createRandomizedArray();
 
-        // Display original randomized numbers
-        System.out.println("========================================");
-        System.out.println("ORIGINAL RANDOMIZED NUMBERS");
-        System.out.println("========================================");
+        // randomized numbers
+        System.out.println("\n");
+        System.out.println("RANDOMIZED NUMBERS");
+        System.out.println("------------------");
+        
         printArray(numbers);
 
 
-        // ==========================================
-        // BUBBLE SORT
-        // ==========================================
+        
+        // bubble sort
         int[] bubbleArray = copyArray(numbers);
 
         bubbleSort(bubbleArray);
 
-        System.out.println("\n========================================");
+        System.out.println("\n");
         System.out.println("BUBBLE SORT");
-        System.out.println("========================================");
+        System.out.println("------------------");
         printArray(bubbleArray);
 
 
-        // ==========================================
-        // SELECTION SORT
-        // ==========================================
+        // selection sort
         int[] selectionArray = copyArray(numbers);
 
         selectionSort(selectionArray);
 
-        System.out.println("\n========================================");
+        System.out.println("\n");
         System.out.println("SELECTION SORT");
-        System.out.println("========================================");
+        System.out.println("------------------");
         printArray(selectionArray);
 
 
-        // ==========================================
-        // INSERTION SORT
-        // ==========================================
+        // insertion sort
         int[] insertionArray = copyArray(numbers);
 
         insertionSort(insertionArray);
 
-        System.out.println("\n========================================");
+        System.out.println("\n");
         System.out.println("INSERTION SORT");
-        System.out.println("========================================");
+        System.out.println("------------------");
         printArray(insertionArray);
 
 
-        // ==========================================
-        // MERGE SORT
-        // ==========================================
+        // merge sort
         int[] mergeArray = copyArray(numbers);
 
         mergeSort(mergeArray, 0, mergeArray.length - 1);
 
-        System.out.println("\n========================================");
+        System.out.println("\n");
         System.out.println("MERGE SORT");
-        System.out.println("========================================");
+        System.out.println("------------------");
         printArray(mergeArray);
 
 
-        // ==========================================
-        // QUICK SORT
-        // ==========================================
+        // quick sort
         int[] quickArray = copyArray(numbers);
 
         quickSort(quickArray, 0, quickArray.length - 1);
 
-        System.out.println("\n========================================");
+        System.out.println("\n");
         System.out.println("QUICK SORT");
-        System.out.println("========================================");
+        System.out.println("------------------");
         printArray(quickArray);
 
 
-        // ==========================================
-        // HEAP SORT
-        // ==========================================
+        // heap sort
         int[] heapArray = copyArray(numbers);
 
         heapSort(heapArray);
 
-        System.out.println("\n========================================");
+        System.out.println("\n");
         System.out.println("HEAP SORT");
-        System.out.println("========================================");
+        System.out.println("------------------");
         printArray(heapArray);
     }
 
 
-    // ==========================================
-    // CREATE RANDOMIZED ARRAY
-    // ==========================================
+    // randomizer array
     public static int[] createRandomizedArray() {
 
         int[] array = new int[100];
 
-        // Put numbers 1 to 100 into the array
+        // inputs the 1 to 100 in the array
         for (int i = 0; i < array.length; i++) {
             array[i] = i + 1;
         }
 
-        // Randomize using Fisher-Yates Shuffle
+        // randomize using fisher-yates shuffle
         Random random = new Random();
 
         for (int i = array.length - 1; i > 0; i--) {
@@ -122,9 +108,7 @@ public class DsaSorting {
     }
 
 
-    // ==========================================
-    // COPY ARRAY
-    // ==========================================
+    // copy array
     public static int[] copyArray(int[] original) {
 
         int[] copy = new int[original.length];
@@ -137,17 +121,15 @@ public class DsaSorting {
     }
 
 
-    // ==========================================
-    // PRINT ARRAY
-    // ==========================================
+    // print array
     public static void printArray(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
 
             System.out.print(array[i] + " ");
 
-            // Put 10 numbers per line
-            if ((i + 1) % 10 == 0) {
+            // put 5 numbers per line
+            if ((i + 1) % 5 == 0) {
                 System.out.println();
             }
         }
@@ -156,9 +138,7 @@ public class DsaSorting {
     }
 
 
-    // ==========================================
-    // SWAP HELPER
-    // ==========================================
+    // swap helper
     public static void swap(int[] array, int i, int j) {
 
         int temp = array[i];
@@ -167,9 +147,7 @@ public class DsaSorting {
     }
 
 
-    // ==========================================
-    // 1. BUBBLE SORT
-    // ==========================================
+    // bubble sort
     public static void bubbleSort(int[] array) {
 
         int n = array.length;
@@ -188,7 +166,7 @@ public class DsaSorting {
                 }
             }
 
-            // Stop if no swapping happened
+            // stop if no swapping happened
             if (!swapped) {
                 break;
             }
@@ -196,9 +174,7 @@ public class DsaSorting {
     }
 
 
-    // ==========================================
-    // 2. SELECTION SORT
-    // ==========================================
+    // selection sort
     public static void selectionSort(int[] array) {
 
         int n = array.length;
@@ -207,7 +183,7 @@ public class DsaSorting {
 
             int minIndex = i;
 
-            // Find smallest element
+            // find smallest element
             for (int j = i + 1; j < n; j++) {
 
                 if (array[j] < array[minIndex]) {
@@ -216,15 +192,13 @@ public class DsaSorting {
                 }
             }
 
-            // Swap smallest element
+            // swap smallest element
             swap(array, i, minIndex);
         }
     }
 
 
-    // ==========================================
-    // 3. INSERTION SORT
-    // ==========================================
+    // insertion sort
     public static void insertionSort(int[] array) {
 
         int n = array.length;
@@ -235,7 +209,7 @@ public class DsaSorting {
 
             int j = i - 1;
 
-            // Shift larger elements to the right
+            // shift larger elements to the right
             while (j >= 0 && array[j] > key) {
 
                 array[j + 1] = array[j];
@@ -249,22 +223,20 @@ public class DsaSorting {
     }
 
 
-    // ==========================================
-    // 4. MERGE SORT
-    // ==========================================
+    // merge sort
     public static void mergeSort(int[] array, int left, int right) {
 
         if (left < right) {
 
             int middle = left + (right - left) / 2;
 
-            // Sort left half
+            // sort left half
             mergeSort(array, left, middle);
 
-            // Sort right half
+            // sort right half
             mergeSort(array, middle + 1, right);
 
-            // Merge both halves
+            // merge both halfs
             merge(array, left, middle, right);
         }
     }
@@ -279,12 +251,12 @@ public class DsaSorting {
         int[] leftArray = new int[leftSize];
         int[] rightArray = new int[rightSize];
 
-        // Copy left half
+        // copy left half
         for (int i = 0; i < leftSize; i++) {
             leftArray[i] = array[left + i];
         }
 
-        // Copy right half
+        // copy right half
         for (int j = 0; j < rightSize; j++) {
             rightArray[j] = array[middle + 1 + j];
         }
@@ -293,7 +265,7 @@ public class DsaSorting {
         int j = 0;
         int k = left;
 
-        // Compare both arrays
+        // compare both arrays
         while (i < leftSize && j < rightSize) {
 
             if (leftArray[i] <= rightArray[j]) {
@@ -310,7 +282,7 @@ public class DsaSorting {
             k++;
         }
 
-        // Copy remaining left elements
+        // copy remaining left elements
         while (i < leftSize) {
 
             array[k] = leftArray[i];
@@ -319,7 +291,7 @@ public class DsaSorting {
             k++;
         }
 
-        // Copy remaining right elements
+        // copy remaining right elements
         while (j < rightSize) {
 
             array[k] = rightArray[j];
@@ -330,20 +302,18 @@ public class DsaSorting {
     }
 
 
-    // ==========================================
-    // 5. QUICK SORT
-    // ==========================================
+    // quick sort
     public static void quickSort(int[] array, int low, int high) {
 
         if (low < high) {
 
-            // Get pivot position
+            // get pivot position
             int pivotIndex = partition(array, low, high);
 
-            // Sort left side
+            // sort left side
             quickSort(array, low, pivotIndex - 1);
 
-            // Sort right side
+            // sort right side
             quickSort(array, pivotIndex + 1, high);
         }
     }
@@ -352,7 +322,7 @@ public class DsaSorting {
     // PARTITION HELPER
     public static int partition(int[] array, int low, int high) {
 
-        // Last element is the pivot
+        // last element is the pivot
         int pivot = array[high];
 
         int i = low - 1;
@@ -367,33 +337,31 @@ public class DsaSorting {
             }
         }
 
-        // Put pivot in correct position
+        // put pivot in correct position
         swap(array, i + 1, high);
 
         return i + 1;
     }
 
 
-    // ==========================================
-    // 6. HEAP SORT
-    // ==========================================
+    // heap sort
     public static void heapSort(int[] array) {
 
         int n = array.length;
 
-        // Build max heap
+        // build max heap
         for (int i = n / 2 - 1; i >= 0; i--) {
 
             heapify(array, n, i);
         }
 
-        // Extract elements one by one
+        // extract elements one by one
         for (int i = n - 1; i > 0; i--) {
 
-            // Move largest element to the end
+            // move largest element to the end
             swap(array, 0, i);
 
-            // Heapify remaining elements
+            // heapify remaining elements
             heapify(array, i, 0);
         }
     }
@@ -408,26 +376,26 @@ public class DsaSorting {
         int right = 2 * i + 2;
 
 
-        // Check left child
+        // check left child
         if (left < n && array[left] > array[largest]) {
 
             largest = left;
         }
 
 
-        // Check right child
+        // check right child
         if (right < n && array[right] > array[largest]) {
 
             largest = right;
         }
 
 
-        // If largest is not the root
+        // if largest is not the root
         if (largest != i) {
 
             swap(array, i, largest);
 
-            // Recursively heapify affected subtree
+            //recursively heapify affected subtree
             heapify(array, n, largest);
         }
     }
