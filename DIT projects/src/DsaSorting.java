@@ -7,6 +7,16 @@ public class DsaSorting {
 
         // Create randomized array from 1 to 100
         int[] numbers = createRandomizedArray();
+        
+        // members
+        
+        System.out.println("JAVOITIZ MEMBERS:");
+        
+        System.out.println("Jewel Jomar Nash E. Portas  :   Leader/Coordinator");
+        System.out.println("Michael Rey Pepito          :   Bubble Sort & Selection Sort");
+        System.out.println("Dilan H. Daza               :   Insertion Sort & Merge Sort");
+        System.out.println("Aaron Lemuel R. Rafael      :   Quick Sort & Heap Sort");
+        System.out.println("----------------------------------------------------------");
 
         // randomized numbers
         System.out.println("\n");
