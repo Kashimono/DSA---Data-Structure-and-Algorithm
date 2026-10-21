@@ -2,9 +2,10 @@ import java.util.PriorityQueue;
 
 public class HeapExample {
 	public static void main(String[] args) {
-		// java's priorityqueue is a Min-heap by default
+		// java's PriorityQueue is a Min-heap by default
 		// make this into a AVL rotation. It should show each rotation
 		//AVLTree
+		// taisang bading
 		PriorityQueue<Integer> minHeap = new PriorityQueue();
 		
 		minHeap.add(20);
